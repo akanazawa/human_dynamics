@@ -5,7 +5,7 @@ University of California, Berkeley
 (* Equal contribution)
 
 [Project Page](https://akanazawa.github.io/human_dynamics/)
-![Teaser Image](https://akanazawa.github.io/human_dynamics/images/teaser.png)
+![Teaser Image](https://akanazawa.github.io/human_dynamics/images/overview.jpg)
 
 
 ![Result on video](https://akanazawa.github.io/human_dynamics/videos/comp_fencing.gif)
