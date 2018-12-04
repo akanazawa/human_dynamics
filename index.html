@@ -1,116 +1,12 @@
 <script src="http://www.google.com/jsapi" type="text/javascript"></script>
 <script type="text/javascript">google.load("jquery", "1.3.2");</script>
 
-<style type="text/css">
-    body {
-        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-        font-weight:300;
-        font-size:18px;
-        margin-left: auto;
-        margin-right: auto;
-        width: 1100px;
-    }
-
-    h1 {
-        font-weight:300;
-    }
-
-    .disclaimerbox {
-        background-color: #eee;
-        border: 1px solid #eeeeee;
-        border-radius: 10px ;
-        -moz-border-radius: 10px ;
-        -webkit-border-radius: 10px ;
-        padding: 20px;
-    }
-
-    video.header-vid {
-        height: 140px;
-        border: 1px solid black;
-        border-radius: 10px ;
-        -moz-border-radius: 10px ;
-        -webkit-border-radius: 10px ;
-    }
-
-    img.header-img {
-        height: 140px;
-        border: 1px solid black;
-        border-radius: 10px ;
-        -moz-border-radius: 10px ;
-        -webkit-border-radius: 10px ;
-    }
-
-    img.rounded {
-        border: 1px solid #eeeeee;
-        border-radius: 10px ;
-        -moz-border-radius: 10px ;
-        -webkit-border-radius: 10px ;
-    }
-
-    a:link,a:visited
-    {
-        color: #1367a7;
-        text-decoration: none;
-    }
-    a:hover {
-        color: #208799;
-    }
-
-    td.dl-link {
-        height: 160px;
-        text-align: center;
-        font-size: 22px;
-    }
-
-    .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
-        box-shadow:
-                0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
-                5px 5px 0 0px #fff, /* The second layer */
-                5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
-                10px 10px 0 0px #fff, /* The third layer */
-                10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
-                15px 15px 0 0px #fff, /* The fourth layer */
-                15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
-                20px 20px 0 0px #fff, /* The fifth layer */
-                20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
-                25px 25px 0 0px #fff, /* The fifth layer */
-                25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
-        margin-left: 10px;
-        margin-right: 45px;
-    }
-
-
-    .layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
-        box-shadow:
-                0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
-                5px 5px 0 0px #fff, /* The second layer */
-                5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
-                10px 10px 0 0px #fff, /* The third layer */
-                10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
-        margin-top: 5px;
-        margin-left: 10px;
-        margin-right: 30px;
-        margin-bottom: 5px;
-    }
-
-    .vert-cent {
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    hr
-    {
-        border: 0;
-        height: 1.5px;
-        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-    }
-</style>
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
 
 <html>
   <head>
-        <title>Learning 3D Human Dynamics from Video</title>
-        <meta property="og:title" content="Factored 3D" />
+    <title>Learning 3D Human Dynamics from Video</title>
+    <meta property="og:title" content="Human Dynamics" />
   </head>
 
   <body>
@@ -121,169 +17,163 @@
 
     <br><br>
       <table align=center width=800px>
-       <tr>
-         <td align=center width=100px>
-         <center>
-         <span style="font-size:20px"><a href="http://www.eecs.berkeley.edu/~kanazawa/">Angjoo Kanazawa<sup>*</sup></a></span>
-         </center>
+      <tr>
+        <td align=center width=100px>
+           <center>
+           <span style="font-size:20px"><a href="http://www.eecs.berkeley.edu/~kanazawa/">Angjoo Kanazawa<sup>*</sup></a></span>
+           </center>
          </td>
-
         <td align=center width=100px>
-        <center>
-        <span style="font-size:20px"><a href="https://jasonyzhang.com">Jason Zhang<sup>*</sup></a></span>
-        </center>
+          <center>
+          <span style="font-size:20px"><a href="https://jasonyzhang.com">Jason Zhang<sup>*</sup></a></span>
+          </center>
         </td>
-
         <td align=center width=100px>
-        <center>
-        <span style="font-size:20px">Panna Felsen<sup>*</sup></span>
-        </center>
+          <center>
+          <span style="font-size:20px">Panna Felsen<sup>*</sup></span>
+          </center>
         </td>
-
         <td align=center width=100px>
-        <center>
-        <span style="font-size:20px"><a href="http://www.eecs.berkeley.edu/~malik/">Jitendra Malik</a></span>
-        </center>
+          <center>
+          <span style="font-size:20px"><a href="http://www.eecs.berkeley.edu/~malik/">Jitendra Malik</a></span>
+          </center>
         </td>
      </tr>
-    </table>
+     </table>
 
     <table align=center width=700px>
-       <tr>
+      <tr>
         <td align=center width=100px>
-        <center>
-        <span style="font-size:20px">University of California, Berkeley</span>
-        </center>
+          <center>
+          <span style="font-size:20px">University of California, Berkeley</span>
+          </center>
         </td>
-     </tr>
+      </tr>
     </table>
 
     <br>
-    <table align=center width=400px>
-     <tr>
-       <td align=center width=100px>
-       <center>
-       <span style="font-size:20px"><a href="#">[Paper]</a></span>
-       </center>
-       </td>
-
-      <td align=center width=100px>
-      <center>
-      <span style="font-size:20px"><a href="#">[Video]</a></span>
-      </center>
-      </td>
-   </tr>
-  </table>
-
-            <br>
-            <br>
-            <table align=center width=600px>
-                <tr>
-                    <td width=600px>
-                      <center>
-                          <a href="./resources/images/teaser.png"><img src = "./resources/images/teaser.png" height="250px"></img></href></a><br>
-                    </center>
-                    </td>
-                </tr>
-                    <td width=600px>
-                      <center>
-                          <span style="font-size:14px"><i>Teaser Texzt</i>
-                    </center>
-                    </td>
-                </tr>
-            </table>
-
-            <br>
-	    From an image of a person in action, we can easily guess the 3D motion of the
-	    person in the immediate past and future. This is because we have a mental model of 3D
-	    human dynamics that we have acquired from observing visual sequences of humans
-	    in motion. We present a framework that can similarly learn a representation of
-	    3D dynamics of humans from video via a simple but effective temporal encoding of
-	    image features. At test time, from video, the learned temporal representation can recover
-	    smooth 3D mesh prediction from video. From a single image, our
-	    model can recover the current 3D mesh as well as its 3D past and future
-	    motion. Our approach is designed so it can learn from videos with 2D pose
-	    annotations in a semi-supervised manner. However annotated data is always
-	    limited. 
-	    On the other hand, there are millions of videos uploaded daily on the
-	    Internet. In this work we harvest this Internet-scale source of unlabeled data
-	    by training our model on them with pseudo-ground truth 2D pose obtained from an
-	    off-the-shelf 2D pose detector. Our experiments show that adding more videos
-	    with pseudo-ground truth 2D pose monotonically improves 3D prediction performance. 
-	    We evaluate our model on the recent challenging dataset of 3D Poses in the Wild and obtain state-of-the-art performance on the 3D prediction task without any fine-tuning.
-            <br><br>
-          <hr>
-         <!-- <table align=center width=550px> -->
-            <table align=center width=800>
-             <center><h1>Paper</h1></center>
-                <tr>
-                    <!--<td width=300px align=left>-->
-                    <!-- <a href="http://arxiv.org/pdf/1603.08511.pdf"> -->
-                  <!-- <td><a href="#"><img class="layered-paper-big" style="height:175px" src="./resources/images/paper.png"/></a></td> -->
-                  <td><a href="#"><img style="height:300px" src="./resources/images/paper.png"/></a></td>
-                  <td><span style="font-size:14pt">Kanazawa<sup>*</sup>, Zhang<sup>*</sup>, Felsen<sup>*</sup>, Malik.<br><br>
-                      Learning 3D Human Dynamics from Video <br>from Image Collections.<br><br>
-                  arXiv, 2018.<br><br>
-                      <a href="#">[pdf]</a> &nbsp; &nbsp;
-                      <a href="./resources/bibtex.txt">[Bibtex]</a>
-                  <!-- [hosted on <a href="#">arXiv</a>]</a> -->
-                    </td>
-              </tr>
-            </table>
-          <br>
-
-                <hr>
-                <center><h1>Results</h1></center>
-                <table align=center width=900px>
-                    <tr>
-                        <td width=600px>
-                          <center>
-                            <div class = "video">
-                              <iframe width="720" height="405" src="https://www.youtube.com/embed/TODO" frameborder="0" allowfullscreen></iframe>
-                           </div>
-                        </center>
-                        </td>
-                    </tr>
-                </table>
-                <br>
-                <hr>
-
-         <center><h1>Code</h1></center>
-            <table align=center width=1000px>
-                <tr>
-                        <center>
-                          <a href='#'><img class="round" style="height:250" src="./resources/images/overview.png"/></a>
-                        </center>
-              </tr>
-          </table>
-
-            <table align=center width=800px>
-              <tr><center> <br>
-                <span style="font-size:28px">&nbsp;<a href='#'>[GitHub]</a>  (coming soon)
-
-                <span style="font-size:28px"></a></span>
-              <br>
-              </center></tr>
-          </table>
-            <br>
-          <hr>
-
-
-            <table align=center width=1100px>
-                <tr>
-                    <td>
-                      <left>
-                <center><h1>Acknowledgements</h1></center>
-                We thank David Fouhey for providing us with the people subset of
-                VLOG, Rishabh Dabral for providing the source code for TP-Net,
-                Timo von Marcard and Gerard Pons-Moll for help with
-                3DPW, and Heather Lockwood for her help and support.  This work was supported in part by Intel/NSF VEC award
-                IIS-1539099 and BAIR sponsors. This webpage template was borrowed from some <a href="https://richzhang.github.io/colorization/">colorful folks</a>.
-            </left>
-        </td>
+      <table align=center width=400px>
+        <tr>
+          <td align=center width=100px>
+            <center>
+            <span style="font-size:20px"><a href="#">[Paper]</a></span>
+            </center>
+          </td>
+          <td align=center width=100px>
+            <center>
+            <span style="font-size:20px"><a href="https://www.youtube.com/watch?v=9fNKSZdsAG8">[Video]</a></span>
+            </center>
+          </td>
         </tr>
+      </table>
+      <br>
+      <br>
+        <table align=center width=600px>
+          <tr>
+            <td width=600px>
+              <center>
+                <a href="./resources/images/teaser.png"><img src = "./resources/images/teaser.jpg" width="600px"></img></a><br>
+              </center>
+            </td>
+          </tr>
+          <tr>
+              <td width=600px>
+                <center>
+                <span style="font-size:14px"><i>Teaser Text</i>
+                </center>
+              </td>
+          </tr>
         </table>
+        <br>
+        From an image of a person in action, we can easily guess the 3D motion of the
+      person in the immediate past and future. This is because we have a mental model of 3D
+      human dynamics that we have acquired from observing visual sequences of humans
+      in motion. We present a framework that can similarly learn a representation of
+      3D dynamics of humans from video via a simple but effective temporal encoding of
+      image features. At test time, from video, the learned temporal representation can recover
+      smooth 3D mesh predictions. From a single image, our
+      model can recover the current 3D mesh as well as its 3D past and future
+      motion. Our approach is designed so it can learn from videos with 2D pose
+      annotations in a semi-supervised manner. However, annotated data is always
+      limited.
+      On the other hand, there are millions of videos uploaded daily on the
+      Internet. In this work, we harvest this Internet-scale source of unlabeled data
+      by training our model on them with pseudo-ground truth 2D pose obtained from an
+      off-the-shelf 2D pose detector. Our experiments show that adding more videos
+      with pseudo-ground truth 2D pose monotonically improves 3D prediction performance.
+      We evaluate our model on the recent challenging dataset of 3D Poses in the Wild and
+      obtain state-of-the-art performance on the 3D prediction task without any fine-tuning.
+      <br><br>
+      <hr>
+      <table align=center width=800>
+       <center><h1>Paper</h1></center>
+          <tr>
+            <td><a href="#"><img style="height:300px" src="./resources/images/paper.png"/></a></td>
+            <td><span style="font-size:14pt">Kanazawa<sup>*</sup>, Zhang<sup>*</sup>, Felsen<sup>*</sup>, and Malik.<br><br>
+                Learning 3D Human Dynamics from Video.<br><br>
+                arXiv, 2018.<br><br>
+                <a href="#">[pdf]</a> &nbsp; &nbsp;
+                <a href="./resources/bibtex.txt">[Bibtex]</a>
+              </td>
+          </tr>
+      </table>
+      <br>
 
-        <br><br>
+      <hr>
+      <center><h1>Results</h1></center>
+      <table align=center width=900px>
+        <tr>
+          <td width=600px>
+            <center>
+              <div class = "video">
+                <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="721" height="405" type="text/html" src="https://www.youtube.com/embed/9fNKSZdsAG8?autoplay=0&fs=1&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&origin=https://youtubeembedcode.com"><div><small><a href="https://youtubeembedcode.com/en">Going Here</a></small></div><div><small><a href="http://add-link-exchange.com">https://add-link-exchange.com</a></small></div><div><small><a href="https://youtubeembedcode.com/en">
+                </iframe>
+              </div>
+          </center>
+          </td>
+          </tr>
+      </table>
+      <br>
+      <hr>
+      <center><h1>Code</h1></center>
+      <table align=center width=1000px>
+        <tr>
+          <center>
+            <a href='#'><img class="round" style="height:250" src="./resources/images/hmmr.jpg"/></a>
+          </center>
+        </tr>
+      </table>
+
+      <table align=center width=800px>
+        <tr>
+          <center> <br>
+            <span style="font-size:28px">&nbsp;<a href='#'>[GitHub]</a>  (coming soon)
+            <span style="font-size:28px"><a></a></span>
+            <br>
+          </center>
+        </tr>
+      </table>
+      <br>
+      <hr>
+
+
+      <table align=center width=1100px>
+        <tr>
+          <td>
+            <left>
+              <center>
+                <h1>Acknowledgements</h1>
+              </center>
+              We thank David Fouhey for providing us with the people subset of
+              VLOG, Rishabh Dabral for providing the source code for TP-Net,
+              Timo von Marcard and Gerard Pons-Moll for help with
+              3DPW, and Heather Lockwood for her help and support.  This work was supported in part by Intel/NSF VEC award
+              IIS-1539099 and BAIR sponsors. This webpage template was borrowed from some <a href="https://richzhang.github.io/colorization/">colorful folks</a>.
+            </left>
+          </td>
+        </tr>
+      </table>
+
+      <br><br>
 </body>
 </html>
