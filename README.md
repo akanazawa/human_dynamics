@@ -10,7 +10,4 @@ University of California, Berkeley
 ![Teaser Image](https://akanazawa.github.io/human_dynamics/resources/images/overview.jpg)
 
 
-![Sample result](https://akanazawa.github.io/human_dynamics/resources/videos/comp_fencing.gif)
-
-![Project video](https://www.youtube.com/watch?v=9fNKSZdsAG8)
 
