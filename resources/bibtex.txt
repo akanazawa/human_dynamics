@@ -1,7 +1,8 @@
-@article{cmrKanazawa18,
-  title={Learning Category-Specific Mesh Reconstruction from Image Collections},
-  author = {Angjoo Kanazawa and Shubham Tulsiani and Alexei A. Efros and Jitendra Malik},
-  journal={arXiv},
+@article{human_dynamics18,
+  title={Learning 3D Human Dynamics from Video},
+  author = {Angjoo Kanazawa and Jason Zhang and Panna Felsen and Jitendra Malik},
+  journal={arXiv preprint arXiv:},
   year={2018}
 }
+
 
