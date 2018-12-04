@@ -68,24 +68,35 @@
       </table>
       <br>
       <br>
-        <table align=center width=600px>
-          <tr>
-            <td width=600px>
-              <center>
-                <a href="./resources/images/teaser.jpg"><img src = "./resources/images/teaser.jpg" width="480px"></img></a><br>
-              </center>
-            </td>
-          </tr>
-          <tr>
-              <td width=480px>
-                <center>
-                <span style="font-size:14px"><i>
-                  From a single image (purple), our model recovers the current 3D mesh as well as the past and future poses.
-                </i>
-                </center>
-              </td>
-          </tr>
-        </table>
+      <table align=center width=1000px>
+        <tr>
+          <td valign="middle">
+              <img src = "./resources/videos/comp_fencing.gif" height="270px"></img>
+          </td>
+          <td valign="middle">
+              <img src = "./resources/images/teaser.jpg" height="350px"></img><br>
+          </td>
+        </tr>
+        <tr>
+          <!-- <td colspan="2"> -->
+          <td>
+            <center>
+            <span style="font-size:14px"><i>
+              From a video of a human, our model (blue) predicts 3D meshes that are more smooth than
+              single-view approaches (pink).
+            </i>
+            </center>
+          </td>
+          <td>
+            <center>
+            <span style="font-size:14px"><i>
+              From a single image (purple), our model recovers the current 3D mesh as well as the past
+              and future poses.
+            </i>
+            </center>
+          </td>
+        </tr>
+      </table>
         <br><br>
         From an image of a person in action, we can easily guess the 3D motion of the
       person in the immediate past and future. This is because we have a mental model of 3D
