@@ -1,8 +1,6 @@
 @article{human_dynamics18,
   title={Learning 3D Human Dynamics from Video},
-  author = {Angjoo Kanazawa and Jason Zhang and Panna Felsen and Jitendra Malik},
-  journal={arXiv preprint arXiv:},
+  author = {Angjoo Kanazawa and Jason Y. Zhang and Panna Felsen and Jitendra Malik},
+  journal={arXiv preprint arXiv:1812.01601},
   year={2018}
 }
-
-
