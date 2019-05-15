@@ -7,8 +7,32 @@ body {
     width: 1100px;
 }
 
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+tr {
+    /*margin-left: auto;
+    margin-right: auto;*/
+    text-align: center;
+}
+
 h1 {
     font-weight:300;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+div {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0;
 }
 
 .disclaimerbox {
@@ -58,6 +82,7 @@ td.dl-link {
     font-size: 22px;
 }
 
+
 .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
     box-shadow:
             0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
@@ -95,8 +120,7 @@ td.dl-link {
     transform: translateY(-50%);
 }
 
-hr
-{
+hr {
     border: 0;
     height: 1.5px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));

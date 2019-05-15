@@ -29,19 +29,13 @@
       <table align=center width=800px>
       <tr>
         <td align=center width=100px>
-           <center>
            <span style="font-size:20px"><a href="http://www.eecs.berkeley.edu/~kanazawa/">Angjoo Kanazawa<sup>*</sup></a></span>
-           </center>
          </td>
         <td align=center width=100px>
-          <center>
           <span style="font-size:20px"><a href="https://jasonyzhang.com">Jason Y. Zhang<sup>*</sup></a></span>
-          </center>
         </td>
         <td align=center width=100px>
-          <center>
           <span style="font-size:20px">Panna Felsen<sup>*</sup></span>
-          </center>
         </td>
         <td align=center width=100px>
           <center>
@@ -65,9 +59,7 @@
       <table align=center width=400px>
         <tr>
           <td align=center width=100px>
-            <center>
-            <span style="font-size:20px"><a href="https://arxiv.org/abs/1812.01601">[Paper]</a></span>
-            </center>
+            <span style="font-size:20px; text-align:center;"><a href="https://arxiv.org/abs/1812.01601">[Paper]</a></span>
           </td>
           <td align=center width=100px>
             <center>
@@ -80,10 +72,10 @@
       <br>
       <table align=center width=1000px>
         <tr>
-          <td valign="middle">
-            <center>
-              <img src = "./resources/videos/comp_fencing.gif" height="270px"></img>
-            </center>
+          <td valign="middle" halign="middle">
+            <video autoplay loop muted playsinline height="270px">
+              <source src="resources/videos/comp_fencing.mp4" type="video/mp4">
+            </video>
           </td>
           <td valign="middle" halign="middle">
             <center>
@@ -98,16 +90,14 @@
             <span style="font-size:14px"><i>
               From a video of a human, our model (blue) can predict 3D meshes that are more temporally consistent
               than a method that only uses a single view (pink).
-            </i>
+            </i></span>
             </center>
           </td>
           <td>
-            <center>
-            <span style="font-size:14px"><i>
+            <span style="font-size:14px; text-align:center;"><i>
               From a single image (purple), our model can recovers the current 3D mesh as well as the past
               and future 3D poses.
-            </i>
-            </center>
+            </i></span>
           </td>
         </tr>
       </table>
@@ -138,15 +128,15 @@
             <td><a href="https://arxiv.org/abs/1812.01601"><img style="width:400px" src="./resources/images/thumb.jpg"/></a></td>
             <td><span style="font-size:14pt">Kanazawa<sup>*</sup>, Zhang<sup>*</sup>, Felsen<sup>*</sup>, and Malik.<br><br>
                 Learning 3D Human Dynamics from Video.<br><br>
-                CVPR 2019.<br><br>
+              CVPR 2019.<br>
                 <a href="https://arxiv.org/pdf/1812.01601.pdf">[pdf]</a> &nbsp; &nbsp;
-                <a href="./resources/bibtex.txt">[Bibtex]</a>
+                <a href="./resources/bibtex.txt">[Bibtex]</a></span><br>
               </td>
           </tr>
       </table>
-      <br>
 
       <hr>
+
       <center><h1>Project Video</h1></center>
       <table align=center width=900px>
         <tr>
@@ -159,27 +149,14 @@
           </td>
           </tr>
       </table>
+
       <br>
       <hr>
-      <center><h1>Results</h1></center>
-      <table align=center width=900px>
-        <tr>
-          <td width=600px>
-            <center>
-              <div class="video">
-                <iframe width="720" height="405" src="https://www.youtube.com/embed/9fNKSZdsAG8?start=300" frameborder="0" allowfullscreen></iframe>
-              </div>
-          </center>
-          </td>
-          </tr>
-      </table>
-      <br>
-      <hr>
-      <center><h1>Code</h1></center>
+      <h1>Code</h1>
       <table align=center width=1000px>
-        <tr>
+        <tr style="text-align:center;">
           <center>
-            <a href='#'><img class="round" style="height:250" src="./resources/images/overview.jpg"/></a>
+            <img class="round" style="height:250px; text-align:center;" src="./resources/images/overview.jpg"/>
           </center>
         </tr>
       </table>
@@ -187,14 +164,113 @@
       <table align=center width=800px>
         <tr>
           <center> <br>
-            <span style="font-size:28px">&nbsp;<a href='#'>[GitHub]</a>  (coming soon)
+            <span style="font-size:28px">&nbsp;<a href='https://github.com/akanazawa/human_dynamics/tree/master'>[GitHub]</a>  </span>
             <span style="font-size:28px"><a></a></span>
             <br>
           </center>
         </tr>
       </table>
-      <br>
+
       <hr>
+      <h2>Demo Results</h2>
+
+
+    <div>
+      <video autoplay loop muted playsinline width="49%">
+        <source src="resources/videos/demo_results/insta_variety-tabletennis_43078913_895055920883203_6720141320083472384_n_short.mp4" type="video/mp4">
+      </video>
+      <video autoplay loop muted playsinline width="49%">
+        <source src="resources/videos/demo_results/insta_variety-tabletennis_43078913_895055920883203_6720141320083472384_n_short_1.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div>
+
+      <video autoplay loop muted playsinline width="28%">
+        <source src="resources/videos/demo_results/insta_variety-hammerthrow_44692705_761535737521282_2601145950961401856_n.mp4" type="video/mp4">
+      </video>
+
+      <video autoplay loop muted playsinline width="35%">
+        <source src="resources/videos/demo_results/insta_variety-dunking_45062340_271806740144972_8388967432928100352_n_short.mp4" type="video/mp4">
+      </video>
+
+      <video autoplay loop muted playsinline width="35%">
+        <source src="resources/videos/demo_results/insta_variety-dunking_45062340_271806740144972_8388967432928100352_n_short_1.mp4" type="video/mp4">
+      </video>
+    </div>
+
+
+    <div>
+      <video autoplay loop muted playsinline width="49.061%">
+        <source src="resources/videos/demo_results/davis-hike.mp4" type="video/mp4">
+      </video>
+      <video autoplay loop muted playsinline width="48.939%">
+        <source src="resources/videos/demo_results/penn_action-2278.mp4" type="video/mp4">
+      </video>
+    </div>
+
+
+    <div>
+      <video autoplay loop muted playsinline width="37.69%">
+        <source src="resources/videos/demo_results/penn_action-0025.mp4" type="video/mp4">
+      </video>
+      <video autoplay loop muted playsinline width="37.69%">
+        <source src="resources/videos/demo_results/penn_action-0191.mp4" type="video/mp4">
+      </video>
+      <video autoplay loop muted playsinline width="22.615%">
+        <source src="resources/videos/demo_results/insta_variety-penaltykick_41547959_335548243685531_1308440788490774406_n.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div>
+      <video autoplay loop muted playsinline width="49%">
+        <source src="resources/videos/demo_results/davis-running.mp4" type="video/mp4">
+      </video>
+      <video autoplay loop muted playsinline width="49%">
+        <source src="resources/videos/demo_results/davis-running_1.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div>
+      <video autoplay loop muted playsinline width="32.6666%">
+        <source src="resources/videos/demo_results/insta_variety-hopscotch_43813243_2107404859281597_3742315295469993984_n_short.mp4" type="video/mp4">
+      </video>
+      <video autoplay loop muted playsinline width="32.6666%">
+        <source src="resources/videos/demo_results/insta_variety-javelinthrow_43507032_402312343639705_4410464175189790871_n.mp4" type="video/mp4">
+      </video>
+      <video autoplay loop muted playsinline width="32.6666%">
+        <source src="resources/videos/demo_results/insta_variety-instagolf_43360267_1374021216067656_1767444579209969664_n.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div>
+      <video autoplay loop muted playsinline width="56%">
+        <source src="resources/videos/demo_results/penn_action-0910.mp4" type="video/mp4">
+      </video>
+
+      <video autoplay loop muted playsinline width="42%">
+        <source src="resources/videos/demo_results/penn_action-0486.mp4" type="video/mp4">
+      </video>
+    </div>
+
+      <br>
+
+      <hr>
+
+    <h1>More Results</h1>
+      <table align=center width=900px>
+        <tr>
+          <td width=600px>
+              <div class="video">
+                <iframe width="720" height="405" src="https://www.youtube.com/embed/9fNKSZdsAG8?start=300" frameborder="0" allowfullscreen></iframe>
+              </div>
+          </td>
+          </tr>
+      </table>
+
+    <br>
+
+    <hr>
 
 
       <table align=center width=1100px>
