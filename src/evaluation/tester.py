@@ -281,11 +281,11 @@ class Tester(object):
         margin = (self.fov - 1) // 2
         g = self.sequence_length - 2 * margin
         count = np.ceil(N / (g * B)).astype(int)
-        num_fill = count * B * T - N
+        num_fill = count * B * g + T - N
         images_padded = np.concatenate((
-            np.zeros((margin, H, W, 3)),             # Front padding.
+            np.zeros((margin, H, W, 3)),    # Front padding.
             all_images,
-            np.zeros((num_fill + margin, H, W, 3)),  # Back padding.
+            np.zeros((num_fill, H, W, 3)),  # Back padding.
         ), axis=0)
         images_batched = []
         # [ m ][    g    ][ m ]             Slide over by g every time.
