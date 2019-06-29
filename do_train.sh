@@ -17,3 +17,4 @@ CMD="export CUDA_VISIBLE_DEVICES=3;python -m src.main --pretrained_model_path ${
 # CMD="export CUDA_VISIBLE_DEVICES=3;python -m src.main --load_path ${LP} --data_dir ${DATA_DIR} --batch_size=8 --datasets h36m,penn_action,insta_variety --log_dir logs_release  --num_conv_layers 3 --T 20 --do_hallucinate --do_hallucinate_preds"
 
 echo $CMD
+$CMD

@@ -95,7 +95,7 @@ Alternatively you can specify the output directory as well. See `demo_video.py`
 
 ### Training code
 
-Coming soon.
+See [doc/train](doc/train.md).
 
 ### Data
 
