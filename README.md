@@ -64,7 +64,6 @@ directory.
 ```
 wget http://angjookanazawa.com/cachedir/hmmr/hmmr_models.tar.gz && tar -xf hmmr_models.tar.gz
 ```
-
 2. Download the `demo_data` videos. Place the `demo_data` folder as a top-level
 directory.
 

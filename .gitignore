@@ -1,4 +1,6 @@
+predictions_cache/
 models/
+models
 logs*
 *.json
 *.tar.gz
@@ -13,7 +15,7 @@ results/
 
 .idea
 venv_hmmr
-do_train.sh
+
 *.avi
 *.mp4
 
@@ -22,3 +24,6 @@ src/external/AlphaPose
 
 *shell*
 
+
+demo_data
+demo_out

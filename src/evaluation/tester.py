@@ -23,7 +23,7 @@ from src.tf_smpl.batch_smpl import SMPL
 
 class Tester(object):
 
-    def __init__(self, config, pretrained_resnet_path=''):
+    def __init__(self, config, pretrained_resnet_path='', sequence_length=None):
         self.config = config
         self.load_path = config.load_path
 
@@ -39,11 +39,14 @@ class Tester(object):
 
         # Model parameters.
         self.batch_size = config.batch_size
-        self.sequence_length = config.sequence_length
+        if sequence_length:
+            self.sequence_length = sequence_length
+        else:
+            self.sequence_length = config.sequence_length
         self.pred_mode = config.pred_mode
         self.num_conv_layers = config.num_conv_layers
         self.fov = self.num_conv_layers * 4 + 1
-        self.use_optcam = config.use_optcam
+
         self.delta_t_values = [int(dt) for dt in config.delta_t_values]
 
         # Data parameters.
@@ -69,9 +72,7 @@ class Tester(object):
             0: self.make_omega_pred(use_optcam=False)
         }
         for dt in self.delta_t_values:
-            self.omegas_pred[dt] = self.make_omega_pred(
-                use_optcam=self.use_optcam
-            )
+            self.omegas_pred[dt] = self.make_omega_pred(use_optcam=True)
 
         # Starting point for IEF.
         mean_cams, mean_shape, mean_pose = self.load_mean_params()
@@ -201,16 +202,15 @@ class Tester(object):
             omega_mean=omega_mean,
             scope='single_view_ief',
             predict_delta_keys=self.omegas_pred.keys(),
-            use_optcam=self.use_optcam,
+            use_optcam=True,
             use_delta_from_pred=True,
         )
         self.omegas_pred[0].append_batched(omegas_raw)
         for k in deltas_pred.keys():
             self.omegas_pred[k].append_batched(deltas_pred[k])
-            if self.use_optcam:
-                self.omegas_pred[k].set_cams(
-                    self.omegas_pred[0].get_cams()
-                )
+            self.omegas_pred[k].set_cams(
+                self.omegas_pred[0].get_cams()
+            )
         OmegasPred.compute_all_smpl()
         self.update_encoder_vars()
 
@@ -283,9 +283,9 @@ class Tester(object):
         count = np.ceil(N / (g * B)).astype(int)
         num_fill = count * B * g + T - N
         images_padded = np.concatenate((
-            np.zeros((margin, H, W, 3)),    # Front padding.
+            np.zeros((margin, H, W, 3)),             # Front padding.
             all_images,
-            np.zeros((num_fill, H, W, 3)),  # Back padding.
+            np.zeros((num_fill, H, W, 3)),           # Back padding.
         ), axis=0)
         images_batched = []
         # [ m ][    g    ][ m ]             Slide over by g every time.

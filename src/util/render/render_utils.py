@@ -38,12 +38,12 @@ def draw_text(input_image, content):
 def draw_skeleton(input_image, joints, draw_edges=True, vis=None, radius=None):
     """
     joints is 3 x 19. but if not will transpose it.
-    0: Right ankle
+    0: Right heel
     1: Right knee
     2: Right hip
     3: Left hip
     4: Left knee
-    5: Left ankle
+    5: Left heel
     6: Right wrist
     7: Right elbow
     8: Right shoulder
@@ -57,9 +57,6 @@ def draw_skeleton(input_image, joints, draw_edges=True, vis=None, radius=None):
     16: right_eye
     17: left_ear
     18: right_ear
-    # When it's 25 (heels and ankles swap):
-    0: R heel
-    5: L heel
     19: left big toe
     20: right big toe
     21: Left small toe
@@ -115,8 +112,7 @@ def draw_skeleton(input_image, joints, draw_edges=True, vis=None, radius=None):
         parents = np.array([
             1, 2, 8, 9, 3, 4, 7, 8, 12, 12, 9, 10, 14, -1, 13, -1, -1, 15, 16
         ])
-        # AJ 9.20.18 I think left is dark and right is light,,,
-        # Left is light and right is dark
+        # Left is dark and right is light.
         ecolors = {
             0: 'light_pink',
             1: 'light_pink',
@@ -171,8 +167,7 @@ def draw_skeleton(input_image, joints, draw_edges=True, vis=None, radius=None):
             24, 2, 8, 9, 3, 23, 7, 8, 12, 12, 9, 10, 14, -1, 13, -1, -1, 15,
             16, 23, 24, 19, 20, 4, 1
         ])
-        # AJ 9.20.18 I think left is dark and right is light,,,
-        # Left is light and right is dark
+        # Left is dark and right is light.
         ecolors = {
             0: 'light_pink',
             1: 'light_pink',

@@ -230,8 +230,8 @@ def az_fc_block2(net_input, num_filter, kernel_width, is_training,
 
 # Functions for f_3D.
 
-def batch_pred_omega(input_features, batch_size, sequence_length, num_output,
-                     is_training, omega_mean, scope, predict_delta_keys=(),
+def batch_pred_omega(input_features, batch_size, is_training, num_output,
+                     omega_mean, sequence_length, scope, predict_delta_keys=(),
                      use_delta_from_pred=False, use_optcam=False):
     """
     Given B x T x * inputs, computes IEF on them by batching them
@@ -298,7 +298,7 @@ def fc2_res(phi, name='fc2_res'):
 
 def call_hmr_ief(phi, omega_start, scope, num_output=85, num_stage=3,
                  is_training=True, predict_delta_keys=(),
-                 use_delta_from_pred=False, use_optcam=False):
+                 use_delta_from_pred=False, use_optcam=True):
     """
     Wrapper for doing HMR-style IEF.
 
@@ -313,6 +313,8 @@ def call_hmr_ief(phi, omega_start, scope, num_output=85, num_stage=3,
         num_stage (int): Number of iterations for IEF.
         is_training (bool): If False, don't apply dropout.
         predict_delta_keys (iterable): List of keys for delta_t.
+        use_delta_from_pred (bool): If True, initializes delta prediction from
+            current frame prediction.
         use_optcam (bool): If True, uses [1, 0, 0] for cam.
 
     Returns:

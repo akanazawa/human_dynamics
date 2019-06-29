@@ -99,6 +99,7 @@ def run_poseflow(img_dir, out_dir):
 
     print('Computing tracking with PoseFlow')
 
+    # Ex:
     # python PoseFlow/tracker-general.py --imgdir demo_data/43139284_2266542610046186_3116128039555373672_n --in_json demo_data/43139284_2266542610046186_3116128039555373672_n/output/alphapose-results.json --out_json demo_data/43139284_2266542610046186_3116128039555373672_n/output/alphapose-results-forvis-tracked.json --visdir demo_data/43139284_2266542610046186_3116128039555373672_n/output/
     cmd = [
         'python', 'PoseFlow/tracker-general.py',

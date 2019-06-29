@@ -6,22 +6,11 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from collections import namedtuple
 import tensorflow as tf
 
-from src.evaluation.eval_util import compute_deltas_batched
+from src.util.tf_ops import compute_deltas_batched
 from src.tf_smpl.batch_lbs import batch_rodrigues
 from src.tf_smpl.projection import batch_orth_proj_idrot
-
-
-OmegaInstance = namedtuple('Omega', [
-    'cams',
-    'joints',
-    'kps',
-    'poses_aa',
-    'poses_rot',
-    'shapes',
-])
 
 
 class Omegas(object):
@@ -67,16 +56,11 @@ class Omegas(object):
         """
         Returns the joints at time t.
 
-        Note that cocoplus mode includes face points, so there will be 19
-        joints. Most of the gt data doesn't include these, so there will be 14
-        joints.
-
         Args:
             t (int).
 
         Returns:
-            Joints (Bx19x3) if pred or using coco gt,
-                or Joints (Bx14x3) else.
+            Joints (Bx25x3).
         """
         return self.joints if t is None else self.joints[:, t]
 
@@ -91,8 +75,8 @@ class Omegas(object):
             t (int).
 
         Returns:
-            Kps (Bx14x3) if gt,
-                or Kps (Bx14x2) if pred.
+            Kps (Bx25x3) if gt,
+                or Kps (Bx25x2) if pred.
         """
         return self.kps if t is None else self.kps[:, t]
 
@@ -173,9 +157,6 @@ class Omegas(object):
         spliced = tf.gather(params=values, indices=indices, axis=1)
         return spliced
 
-    def get_omega_at(self, t):
-        return
-
 
 class OmegasGt(Omegas):
     """
@@ -208,39 +189,6 @@ class OmegasGt(Omegas):
             return tf.tile(tf.expand_dims(self.shapes, 1), (1, self.length, 1))
         else:
             return self.shapes
-
-    def get_omega_at(self, t, as_tuple=False):
-        """
-        Returns an Omega container object that wraps all tensors at time t.
-
-        Fields are: 'cams', 'joints', 'kps', 'poses_aa', 'poses_rot', 'shapes'.
-        Cams are None if using gt.
-
-        Args:
-            t (int).
-            as_tuple (bool): If True, returns tuple of tensors instead.
-
-        Returns:
-            Omega Named Tuple.
-        """
-        if as_tuple:
-            return (
-                tf.zeros((self.batch_size, 3)),
-                self.joints[:, t],
-                self.kps[:, t],
-                self.poses_aa[:, t],
-                self.poses_rot[:, t],
-                self.shapes
-            )
-        else:
-            return OmegaInstance(
-                cams=tf.zeros((self.batch_size, 3)),
-                joints=self.joints[:, t],
-                kps=self.kps[:, t],
-                poses_aa=self.poses_aa[:, t],
-                poses_rot=self.poses_rot[:, t],
-                shapes=self.shapes
-            )
 
     def get_deltas_aa(self, t=None):
         raise Exception('No axis-aligned deltas.')
@@ -373,49 +321,6 @@ class OmegasPred(Omegas):
         """
         assert self.use_optcam
         self.cams = cams
-
-    def get_omega_at(self, t, as_tuple=False):
-        """
-        Returns an Omega container object that wraps all tensors at time t.
-
-        Fields are: 'cams', 'joints', 'kps', 'poses_aa', 'poses_rot', 'shapes'.
-        Cams are None if using gt.
-
-        Args:
-            t (int).
-            as_tuple (bool).
-
-        Returns:
-            Omega Named Tuple.
-        """
-        if self.smpl_computed:
-            return OmegaInstance(
-                cams=self.cams[:, t],
-                joints=self.joints[:, t],
-                kps=self.kps[:, t],
-                poses_aa=self.poses_aa[:, t],
-                poses_rot=self.poses_rot[:, t],
-                shapes=self.shapes[:, t]
-            )
-        else:
-            if as_tuple:
-                return (
-                    self.cams[:, t],
-                    tf.zeros((self.batch_size, self.config.num_kps, 3)),
-                    tf.zeros((self.batch_size, 14, 2)),
-                    self.poses_aa[:, t],
-                    tf.zeros((self.batch_size, 24, 3, 3)),
-                    self.shapes[:, t]
-                )
-            else:
-                return OmegaInstance(
-                    cams=self.cams[:, t],
-                    joints=None,
-                    kps=None,
-                    poses_aa=self.poses_aa[:, t],
-                    poses_rot=None,
-                    shapes=self.shapes[:, t]
-                )
 
     def get_all_verts(self):
         return self.all_verts

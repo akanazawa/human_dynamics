@@ -29,7 +29,7 @@ def batch_orth_proj_idrot(X, camera, name=None):
             camera[:, :, 0] * tf.reshape(X_trans, [shape[0], -1]), shape)
 
 
-def batch_orth_proj_optcam(X, X_gt, unbounded=False, name=None):
+def batch_orth_proj_optcam(X, X_gt, name=None):
     """
     Solves for best sale and translation in 2D, i.e.
     gives (s, t) such that ||s(x + t) - x_gt||^2
@@ -39,22 +39,19 @@ def batch_orth_proj_optcam(X, X_gt, unbounded=False, name=None):
     returns proj_x: N x K x 2 and best_cam:[scale, trans]
     """
     with tf.name_scope(name, 'batch_orth_proj_optcam', [X, X_gt]):
-        best_cam = procrustes2d_vis(X, X_gt, unbounded=unbounded)
+        best_cam = procrustes2d_vis(X, X_gt)
         best_cam = tf.stop_gradient(best_cam)
         proj_x = batch_orth_proj_idrot(X, best_cam)
         return proj_x, best_cam
 
 
-def procrustes2d_vis(X, X_target, unbounded=True):
+def procrustes2d_vis(X, X_target):
     """
     Solves for the optimal sale and translation in 2D, i.e.
     gives (s, t) such that ||s(x + t) - x_gt||^2
     on *visible* points.
 
     Gradient is stopped on the computed camera.
-
-    if unbounded is False (i.e. bounded), it lower bounds the scale
-    so it can't be so small.
 
     X: N x K x 2 or N x K x 3 (last dim is dropped)
     X_target: N x K x 3, 3rd dim is visibility.
@@ -92,13 +89,16 @@ def procrustes2d_vis(X, X_target, unbounded=True):
 
         scale = tf.expand_dims(tf.trace(tf.matmul(Ainv, B)) / 2., 1)
 
-        if not unbounded:
-            print('Optcam: lowerbound scale')
-            # only need the lower bound, but setting max to 10 bc tf doesn't
-            # take None.
-            scale = tf.clip_by_value(scale, 0.7, 10)
+        # Bounding the scale value.
+        # If prediction is flipped, the optimal scale approaches 0.
+        # (bc 0 error is the best you can do without out-of-plane-rotation)
+        # Bound the scale with a lower bound to prevent collapse.
+        # We only need the lower bound, but setting max to 10 bc tf doesn't
+        # take None.
+        scale = tf.clip_by_value(scale, 0.7, 10)
 
         trans = tf.squeeze(mu2) / scale - tf.squeeze(mu1)
 
         best_cam = tf.concat([scale, trans], 1)
+        
         return best_cam

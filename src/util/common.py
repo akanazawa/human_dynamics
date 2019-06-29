@@ -1,7 +1,6 @@
-from os import makedirs
-import os.path as osp
-
 import cv2
+import os
+import os.path as osp
 import numpy as np
 
 
@@ -17,4 +16,4 @@ def resize_img(img, scale_factor):
 
 def mkdir(dir_path):
     if not osp.exists(dir_path):
-        makedirs(dir_path)
+        os.makedirs(dir_path)
