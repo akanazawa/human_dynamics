@@ -79,7 +79,7 @@ sh do_train.sh
 
 The training write to a log directory that you can specify.
 Setup tensorboard to this directory to monitor the training progress like so:
-![Teaser Image](/resources/tboard_ex.png)
+![Teaser Image](https://akanazawa.github.io/human_dynamics/resources/images/tboard_ex.png)
 
 It's important to visually monitor the training! Make sure that the images
 loaded look right.
