@@ -18,16 +18,25 @@ follow the directory structure: `<tfrecords_dir>/<dataset_name>/<split>/*tfrecor
 To call the evaluation script, run:
 ```bash
 ./src/evaluation/autorestart.py python -m src.evaluation.eval --tf_dir path_to_tfrecords --split val
-    --test_datasets tfrecords_test --test_datasets 3dpw,penn_action,h36m --load_path path_to_model_ckpt
+  --test_datasets tfrecords_test --test_datasets 3dpw,penn_action,h36m --load_path path_to_model_ckpt
 ```
 
 Running the evaluation on the test set using the public model `hmmr_model.ckpt-1119816` should give you:
 
 ```
-           Data      accel         kp      kp_pa     kp_pck     joints  joints_pa mesh_posed mesh_tpose
-           3dpw    0.01532    5.90772    5.48809    0.92961    0.11688    0.07266    0.13934    0.02680
-           h36m    0.00882    4.93181    4.00981    0.95606    0.08371    0.05692   -1.00000   -1.00000
-    penn_action    0.02796    8.87832    8.51331    0.79553   -1.00000   -1.00000   -1.00000   -1.00000
+       Data      accel         kp      kp_pa     kp_pck     joints  joints_pa mesh_posed mesh_tpose
+       3dpw    0.01532    5.90772    5.48809    0.92961    0.11688    0.07266    0.13934    0.02680
+       h36m    0.00882    4.93181    4.00981    0.95606    0.08371    0.05692   -1.00000   -1.00000
+penn_action    0.02796    8.87832    8.51331    0.79553   -1.00000   -1.00000   -1.00000   -1.00000
+```
+
+We also trained a model with H3.6M (without Mosh data), Penn Action, and InstaVariety. Here are the numbers we get for that model:
+
+```
+       Data      accel         kp      kp_pa     kp_pck     joints  joints_pa mesh_posed mesh_tpose
+       3dpw    0.01635    6.20286    5.79252    0.91890    0.12803    0.07731    0.14852    0.02756
+       h36m    0.00851    4.85473    3.98626    0.95704    0.08895    0.05939   -1.00000   -1.00000
+penn_action    0.02894    9.24552    8.71280    0.78622   -1.00000   -1.00000   -1.00000   -1.00000
 ```
 
 
