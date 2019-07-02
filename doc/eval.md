@@ -17,11 +17,11 @@ follow the directory structure: `<tfrecords_dir>/<dataset_name>/<split>/*tfrecor
 
 To call the evaluation script, run:
 ```bash
-./src/evaluation/autorestart.py python -m src.evaluation.eval --tf_dir path_to_tfrecords --test_datasets tfrecords_test \
-    --test_datasets 3dpw,penn_action,h36m --split val --load_path path_to_model_ckpt
+./src/evaluation/autorestart.py python -m src.evaluation.eval --tf_dir path_to_tfrecords --split val
+    --test_datasets tfrecords_test --test_datasets 3dpw,penn_action,h36m --load_path path_to_model_ckpt
 ```
 
-Running this on the public model `hmmr_model.ckpt-1119816` outputs:
+Running the evaluation on the test set using the public model `hmmr_model.ckpt-1119816` should give you:
 
 ```
            Data      accel         kp      kp_pa     kp_pck     joints  joints_pa mesh_posed mesh_tpose
@@ -29,3 +29,15 @@ Running this on the public model `hmmr_model.ckpt-1119816` outputs:
            h36m    0.00882    4.93181    4.00981    0.95606    0.08371    0.05692   -1.00000   -1.00000
     penn_action    0.02796    8.87832    8.51331    0.79553   -1.00000   -1.00000   -1.00000   -1.00000
 ```
+
+
+
+Error metrics:
+* `accel`: Acceleration error (mm/s^2)
+* `kp`: 2D KP Error (pixels)
+* `kp_pa`: 2D KP Error after optimal scale and translation (pixels)
+* `kp_pck`: Percentage of Correct Keypoints (%)
+* `joints`: MPJPE (mm)
+* `joints_pa`: MPJPE after Procrustes Alignment (mm)
+* `mesh_posed`: Mesh error posed (mm)
+* `mesh_tposed`: Mesh error unposed (mm)
