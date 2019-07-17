@@ -79,10 +79,10 @@ Sample usage:
 
 ```
 # Run on a single video:
-python -m demo_video --vid_path demo_data/penn_action-2278.mp4
+python -m demo_video --vid_path demo_data/penn_action-2278.mp4 --load_path models/hmmr_model.ckpt-2699068
 
 # If there are multiple people in the video, you can also pass a track index:
-python -m demo_video --track_id 1 --vid_path demo_data/insta_variety-tabletennis_43078913_895055920883203_6720141320083472384_n_short.mp4
+python -m demo_video --track_id 1 --vid_path demo_data/insta_variety-tabletennis_43078913_895055920883203_6720141320083472384_n_short.mp4 --load_path models/hmmr_model.ckpt-2699068
 
 # Run on an entire directory of videos:
 python -m demo_video --vid_dir demo_data/
@@ -116,4 +116,5 @@ If you use this code for your research, please consider citing:
   author = {Angjoo Kanazawa and Jason Y. Zhang and Panna Felsen and Jitendra Malik},
   booktitle={Computer Vision and Pattern Recognition (CVPR)},
   year={2019}
+}
 ```
