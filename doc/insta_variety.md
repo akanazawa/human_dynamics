@@ -77,6 +77,7 @@ python -m src.datasets.video_in_the_wild_to_tfrecords --data_directory ${INSTA_T
 To generate test tfrecords:
 ```
 python -m src.datasets.video_in_the_wild_to_tfrecords --data_directory ${INSTA_TRACKS_DIR} --output_directory ${OUT_DIR}/insta_variety --num_copy 1 --pretrained_model_path ${HMR_MODEL} --image_directory ${INSTA_FRAMES_DIR} --video_list ${INSTA_VIDEO_LIST} --split test
+```
 
 ### Citation
 If you use this data for your research, please cite:
