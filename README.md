@@ -22,6 +22,9 @@ University of California, Berkeley
 
 There is currently no CPU-only support.
 
+### Contributions
+- Windows build and Unity port. Thanks George @ZjuSxh! https://github.com/Zju-George/human_dynamics
+
 ### Installation
 
 #### Setup virtualenv
