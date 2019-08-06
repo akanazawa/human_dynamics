@@ -94,5 +94,5 @@ Unfortunately, due to the licensing, the Human3.6M Mosh data is no longer
 available.
 This means you will not be able to reproduce exactly the public model since the
 supervision will not have the mosh values. Human3.6M data produced above will
-still have the 3D joint annotation, but not the SMPL values. It will be similar
-to the weakly-supervised setting in the HMR paper.
+still have the 3D joint annotation, but not the SMPL values. 
+We have re-trained our model on this setting where Human3.6M mosh data is not available, see [doc/eval.md](/doc/eval.md#evaluating-tfrecords)
