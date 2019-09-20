@@ -22,6 +22,9 @@ University of California, Berkeley
 
 There is currently no CPU-only support.
 
+### License
+Please note that while our code is under BSD, the SMPL model and datasets we use have their own licenses that must be followed.
+
 ### Contributions
 - Windows build and Unity port. Thanks George @ZjuSxh! https://github.com/Zju-George/human_dynamics
 
