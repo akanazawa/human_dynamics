@@ -91,7 +91,7 @@ python -m demo_video --vid_path demo_data/penn_action-2278.mp4 --load_path model
 python -m demo_video --track_id 1 --vid_path demo_data/insta_variety-tabletennis_43078913_895055920883203_6720141320083472384_n_short.mp4 --load_path models/hmmr_model.ckpt-1119816
 
 # Run on an entire directory of videos:
-python -m demo_video --vid_dir demo_data/
+python -m demo_video --vid_dir demo_data/ --load_path models/hmmr_model.ckpt-1119816
 ```
 
 This will make a directory `demo_output/<video_name>`, where intermediate
