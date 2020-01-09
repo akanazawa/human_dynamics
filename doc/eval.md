@@ -8,7 +8,7 @@ they do not have data augmentation and are not sharded. Each tfrecord
 corresponds to one sequence. Each example in the tfrecord corresponds to the
 tracklet for one person. All datasets except 3DPW only have one person.
 
-For 3DPW and UPenn, follow the directions in [parepare_datasets.sh](prepare_datasets.sh) to
+For 3DPW and UPenn, follow the directions in [parepare_datasets.sh](/prepare_datasets.sh) to
 generate the test tfrecords. Also see [datasets.md](/doc/datasets.md) for their format. The directory with the test tfrecords should
 follow the directory structure: `<tfrecords_dir>/<dataset_name>/<split>/*tfrecords`.
 
