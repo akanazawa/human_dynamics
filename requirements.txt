@@ -9,7 +9,7 @@ numpy==1.16.3
 opencv-python==3.4.5.20
 scikit-image==0.15.0
 scipy==1.2.1
-tensorflow-gpu==1.8
+tensorflow-gpu==1.15.2
 torch==0.4.0
 torchvision==0.2.2
 tqdm==4.19.9
