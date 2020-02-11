@@ -64,13 +64,13 @@ copy over the changes in `demo.py`.
 
 ### Demo
 
-1. Download the pre-trained models. Place the `models` folder as a top-level
+1. Download the pre-trained models (also available on [Google Drive](https://drive.google.com/file/d/1LlF9Nci8OtkqKfGwHLh7wWx1xRs7oSyF/view)). Place the `models` folder as a top-level
 directory.
 
 ```
 wget http://angjookanazawa.com/cachedir/hmmr/hmmr_models.tar.gz && tar -xf hmmr_models.tar.gz
 ```
-2. Download the `demo_data` videos. Place the `demo_data` folder as a top-level
+2. Download the `demo_data` videos (also available on [Google Drive](https://drive.google.com/file/d/1ljb8RLJ-PupFlzomhfjpUTzP1Cf6V2no/view)). Place the `demo_data` folder as a top-level
 directory.
 
 ```
