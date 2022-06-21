@@ -5,7 +5,7 @@ chumpy==0.68
 deepdish==0.3.6
 ipdb==0.12
 matplotlib==3.0.3
-numpy==1.16.3
+numpy==1.22.0
 opencv-python==3.4.5.20
 scikit-image==0.15.0
 scipy==1.2.1
